@@ -20,8 +20,6 @@ public :
 
     void flush() {
         if(pendingBits) {
-            // pendingOutput <<= (8 - pendingBits);
-            // std::cout << pendingBits << " " << " " << pendingOutput << " " << (pendingOutput & 0xff) << std::endl;
             output.put(pendingOutput);
         }
     }
