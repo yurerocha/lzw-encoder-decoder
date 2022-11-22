@@ -92,6 +92,7 @@ void LZW::saveEncoded() {
     for(auto it = outEnco.begin() + 1; it != outEnco.end(); ++it) {
         os << *it;
     }
+    os.flush();
 
     f.close();
 }

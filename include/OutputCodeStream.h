@@ -18,6 +18,14 @@ public :
         flush(8);
     }
 
+    void flush() {
+        if(pendingBits) {
+            // pendingOutput <<= (8 - pendingBits);
+            // std::cout << pendingBits << " " << " " << pendingOutput << " " << (pendingOutput & 0xff) << std::endl;
+            output.put(pendingOutput);
+        }
+    }
+
 private :
     void flush(const int val) {
         while(pendingBits >= val) {
